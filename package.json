@@ -79,9 +79,8 @@
   "scripts": {
     "start": "node  scripts/start.js",
     "build": "node   scripts/build.js",
-    "test": "node scripts/test.js",
-    "lambda-serve": "env-cmd netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "test": "node scripts/test.js"
+    
   },
   "eslintConfig": {
     "extends": [
