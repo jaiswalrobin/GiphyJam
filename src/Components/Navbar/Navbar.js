@@ -7,19 +7,20 @@ import Container from "../../containers/Container"
 
 require("dotenv").config()
 
-// // let GiphyArr = "";
-// const Search = (props) => {};
+if (process.env.NODE_ENV === "development") {
+  var apiKey = "qmmFL8EYY3q5VxNh57djy8sJ2fCKwKOm"
+}
 
 const Navbar = (props) => {
+  const [loader, setLoader] = useState(false)
+
   const [msg, setMsg] = useState("")
   useEffect(() => {
-    console.log(process.env.REACT_APP_API_KEY)
-    // if (process.env.NODE_ENV === "development") {
-
-    // }
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=25&rating=g`
+        `https://api.giphy.com/v1/gifs/trending?api_key=${
+          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+        }&limit=25&rating=g`
       )
       .then((res) => {
         // console.log(res.data);
@@ -44,7 +45,7 @@ const Navbar = (props) => {
   }, [])
 
   const [searchValue, setSearchValue] = useState("")
-  const [loader, setLoader] = useState(false)
+
   const [suggestion, setSuggestion] = useState([])
   const [gifArr, setGifArr] = useState([])
   const handleInputChange = (e) => {
@@ -53,7 +54,9 @@ const Navbar = (props) => {
     const query = searchValue
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${query}&limit=15&offset=0&rating=g&lang=en`
+        `https://api.giphy.com/v1/gifs/search?api_key=${
+          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+        }&q=${query}&limit=15&offset=0&rating=g&lang=en`
       )
       .then((res) => {
         // console.log(res.data);
@@ -92,7 +95,9 @@ const Navbar = (props) => {
       const query = searchValue
       axios
         .get(
-          `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${query}&limit=15&offset=0&rating=g&lang=en`
+          `https://api.giphy.com/v1/gifs/search?api_key=${
+            apiKey ? apiKey : process.env.REACT_APP_API_KEY
+          }&q=${query}&limit=15&offset=0&rating=g&lang=en`
         )
         .then((res) => {
           // console.log(res.data);
@@ -122,7 +127,9 @@ const Navbar = (props) => {
     const query = searchValue
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${query}&limit=15&offset=0&rating=g&lang=en`
+        `https://api.giphy.com/v1/gifs/search?api_key=${
+          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+        }&q=${query}&limit=15&offset=0&rating=g&lang=en`
       )
       .then((res) => {
         // console.log(res.data);
@@ -153,7 +160,9 @@ const Navbar = (props) => {
     const query = searchValue
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_API_KEY}&tag=&rating=g`
+        `https://api.giphy.com/v1/gifs/random?api_key=${
+          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+        }&tag=&rating=g`
       )
       .then((res) => {
         // console.log(res.data)
