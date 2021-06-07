@@ -177,7 +177,7 @@ const Navbar = (props) => {
           if (data.length === 0) {
             setMsg("Something went wrong")
           } else {
-            setMsg("Didn't liked it?, click magic man again!")
+            setMsg("Don't like it?, click magic man again!")
           }
         }, 300)
 
