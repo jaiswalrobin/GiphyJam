@@ -17,7 +17,7 @@ const Navbar = (props) => {
     axios
       .get(
         `https://api.giphy.com/v1/gifs/trending?api_key=${
-          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+          process.env.REACT_APP_API_KEY
         }&limit=25&rating=g`
       )
       .then((res) => {
