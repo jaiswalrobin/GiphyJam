@@ -7,9 +7,7 @@ import Container from "../../containers/Container"
 
 require("dotenv").config()
 
-if (process.env.NODE_ENV === "development") {
-  var apiKey = "qmmFL8EYY3q5VxNh57djy8sJ2fCKwKOm"
-}
+
 
 const Navbar = (props) => {
   const [loader, setLoader] = useState(false)
