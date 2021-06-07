@@ -53,7 +53,7 @@ const Navbar = (props) => {
     axios
       .get(
         `https://api.giphy.com/v1/gifs/search?api_key=${
-          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+          process.env.REACT_APP_API_KEY
         }&q=${query}&limit=15&offset=0&rating=g&lang=en`
       )
       .then((res) => {
@@ -94,7 +94,7 @@ const Navbar = (props) => {
       axios
         .get(
           `https://api.giphy.com/v1/gifs/search?api_key=${
-            apiKey ? apiKey : process.env.REACT_APP_API_KEY
+            process.env.REACT_APP_API_KEY
           }&q=${query}&limit=15&offset=0&rating=g&lang=en`
         )
         .then((res) => {
@@ -126,7 +126,7 @@ const Navbar = (props) => {
     axios
       .get(
         `https://api.giphy.com/v1/gifs/search?api_key=${
-          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+          process.env.REACT_APP_API_KEY
         }&q=${query}&limit=15&offset=0&rating=g&lang=en`
       )
       .then((res) => {
@@ -159,7 +159,7 @@ const Navbar = (props) => {
     axios
       .get(
         `https://api.giphy.com/v1/gifs/random?api_key=${
-          apiKey ? apiKey : process.env.REACT_APP_API_KEY
+          process.env.REACT_APP_API_KEY
         }&tag=&rating=g`
       )
       .then((res) => {
