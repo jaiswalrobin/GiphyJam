@@ -21,7 +21,7 @@ const Navbar = ({
         <div className="search">
           <input
             onKeyDown={(e) => {
-              if (e.code === "Enter") {
+              if (e.code === "Enter" || e.keyCode === 13) {
                 console.log("chlaaa");
                 handleClick(e);
               }

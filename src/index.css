@@ -227,6 +227,7 @@ nav div:last-of-type {
   .gifsContainer {
     column-count: 2;
   }
+
   .header {
     justify-content: space-around;
     padding: 8px 0;
@@ -257,6 +258,9 @@ nav div:last-of-type {
     font-weight: 900;
     color: #504df9;
     display: block;
+  }
+  .suggestionContainer {
+    display: none;
   }
 }
 @media (min-width: 767px) {
