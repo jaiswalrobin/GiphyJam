@@ -1,31 +1,32 @@
-import React from "react"
+import React from "react";
 
-const Container = (props) => {
+const Container = ({ data, searchKey, loader, msg }) => {
   // console.log(props);
-  return props.loader ? (
-    <div className="lds-roller">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  ) : (
+  return (
     <>
-      {props.data.length > 0 ? (
+      {data.length > 0 ? (
         <div className="container">
-          {props.searchKey ? (
-            <p>Results for "{props.searchKey}"</p>
-          ) : (
-            <p>{props.msg}</p>
-          )}
+          {searchKey ? <p>Results for "{searchKey}"</p> : <p>{msg}</p>}
 
-          <div className="gifsContainer">{props.data}</div>
+          <div className={`gifsContainer ${data.length === 1 ? "center" : ""}`}>
+            {data}
+          </div>
         </div>
       ) : (
-        <p style={{ textAlign: "center", margin: "50px" }}>{props.msg}</p>
+        <p style={{ textAlign: "center", margin: "50px" }}>{msg}</p>
+      )}
+      {loader ? (
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      ) : (
+        ""
       )}
     </>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

@@ -1,0 +1,5 @@
+{
+    "watch": ["scripts/start.js", ".env"],
+    "ext": "js,json"
+  }
+  
